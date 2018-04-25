@@ -7,6 +7,7 @@ jobs:
             # this is run by the PRs as well
             - validate: ./node_modules/.bin/template-validate
     publish:
+        requires: [~pr]
         steps:
             - install: npm install screwdriver-template-main
             # publishing also validates
